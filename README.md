@@ -1,2 +1,2 @@
-# minetest
+# Minetest
 Resources for modding Minetest.
