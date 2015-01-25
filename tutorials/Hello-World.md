@@ -80,3 +80,34 @@ minetest.register_tool("tutorial:hellopick", {
       end,
 })
 ```
+Crafting Hello World Pickaxe. `default:` is needed for Minimal version, whereas `group:` in the regular one allows for all of the type instead of just the individual kind. (Cobblestone is a kind of stone, for instance.)
+
+```Lua
+minetest.register_craft({
+	output = "tutorial:hellopick",
+	recipe = {
+		{'default:stone', 'default:dirt', 'default:stone'},
+		{'', 'default:stick', ''},
+		{'', 'default:stick', ''},
+	}
+})
+```
+
+```Lua
+function tutorial_crafting()
+   local s = "default:stone"
+   local t = "default:stick"
+   local d = "default:dirt"
+
+   minetest.register_craft({
+	   output = "tutorial:hellopick",
+	   recipe = {
+		   {s, d, s},
+		   {'', t, ''},
+		   {'', t, ''},
+	   }
+   })
+end
+
+tutorial_crafting()
+```
