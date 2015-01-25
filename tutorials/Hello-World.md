@@ -59,3 +59,24 @@ minetest.register_tool("tutorial:hellopick", {
 	inventory_image = "tutorial_tool_hellopick.png",
 })
 ```
+
+Made like Stone Pickaxe, plus Hello World output.
+```Lua
+minetest.register_tool("tutorial:hellopick", {
+	inventory_image = "tutorial_tool_hellopick.png",
+	description = "Hello World Pickaxe",
+	tool_capabilities = {
+		full_punch_interval = 1.3,
+		max_drop_level=0,
+		groupcaps={
+			cracky = {times={[2]=2.0, [3]=1.20}, uses=20, maxlevel=1},
+		},
+		damage_groups = {fleshy=3},
+	},
+	after_use = function(itemstack, user, node, digparams)      
+	      minetest.chat_send_all("Hello world!")
+         itemstack:add_wear(digparams.wear)
+         return itemstack
+      end,
+})
+```
