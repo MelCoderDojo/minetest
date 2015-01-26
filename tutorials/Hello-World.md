@@ -142,6 +142,7 @@ minetest.register_tool("helloworld:pick_hello", {
    },
 })
 ```
+## Still Not Finished
 
 ```Lua
 minetest.register_tool("tutorial:hellopick", {
