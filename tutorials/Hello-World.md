@@ -150,7 +150,7 @@ So right now, our Hello World Pickaxe works like a Stone Pickaxe. What blocks it
 
 Go try it out and make sure your code works.
 
-## Putting the Hello World in Our Pickaxe
+## Putting in Hello World
 
 Being our first item and being called the Hello World Pickaxe could be considered good enough for some for a Hello World sort of thing. However, we're going to go one step further and actually make the words "Hello world!" come up from our tool.
 
@@ -170,7 +170,7 @@ minetest.register_tool("helloworld:pick_hello", {
       minetest.chat_send_all("Hello world!")
       itemstack:add_wear(digparams.wear)
       return itemstack
-   end,
+   end
 })
 ```
 
