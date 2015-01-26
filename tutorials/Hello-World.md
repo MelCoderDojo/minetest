@@ -62,7 +62,8 @@ Let's check out our Hello Pickaxe now! Start up Minetest.
 Now, start up the Tutorial world we just made!
 
 We don't have a way to make our pickaxe, so we're going to tell the game to just give it to us.
-1. Hit the **/** or **T** key.
+
+1. Hit the **/** (slash) or **T** key.
 2. Type in `/giveme helloworld:pick_hello`.
 3. Hit **Enter** or press *Proceed*.
 
