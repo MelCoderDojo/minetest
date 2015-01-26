@@ -62,9 +62,9 @@ Let's check out our Hello Pickaxe now! Start up Minetest.
 Now, start up the Tutorial world we just made!
 
 We don't have a way to make our pickaxe, so we're going to tell the game to just give it to us.
-1. Hit the */* or *T* key.
+1. Hit the **/** or **T** key.
 2. Type in `/giveme helloworld:pick_hello`.
-3. Hit *Enter* or press *Proceed*.
+3. Hit **Enter** or press *Proceed*.
 
 Now you have the Hello World Pickaxe!
 
@@ -76,9 +76,9 @@ If you wanted a Stone Pickaxe, you would instead do `/giveme default:pick_stone`
 
 Run around in the game and some other items. They can be other tools or just some blocks.
 
-If you hit the *I* key and look at your items, you'll see that the other things all tell you what they are when the mouse arrow is over them. Our pickaxe doesn't do that. Let's fix that!
+If you hit the **I** key and look at your items, you'll see that the other things all tell you what they are when the mouse arrow is over them. Our pickaxe doesn't do that. Let's fix that!
 
-First, hit the *Esc* key and the *Exit to Menu* button. We'll play again soon, don't worry! We just can't change the code while the game is actually playing. It's okay while the start screen is up though.
+First, hit the **Esc** key and the *Exit to Menu* button. We'll play again soon, don't worry! We just can't change the code while the game is actually playing. It's okay while the start screen is up though.
 
 So we need to add a line to our `init.lua`.
 
