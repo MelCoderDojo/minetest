@@ -142,55 +142,82 @@ minetest.register_tool("helloworld:pick_hello", {
    },
 })
 ```
-## Still Not Finished
+Just don't forget that comma! 
+```Lua
+inventory_image = "helloworld_hellopick.png",  -- Comma here!
+```
+So right now, our Hello World Pickaxe works like a Stone Pickaxe. What blocks it can break, how much damage it can do, all of that.
+
+Go try it out and make sure your code works.
+
+## Putting the Hello World in Our Pickaxe
+
+Being our first item and being called the Hello World Pickaxe could be considered good enough for some for a Hello World sort of thing. However, we're going to go one step further and actually make the words "Hello world!" come up from our tool.
 
 ```Lua
-minetest.register_tool("tutorial:hellopick", {
-	inventory_image = "tutorial_tool_hellopick.png",
-	description = "Hello World Pickaxe",
-	tool_capabilities = {
-		full_punch_interval = 1.3,
-		max_drop_level=0,
-		groupcaps={
-			cracky = {times={[2]=2.0, [3]=1.20}, uses=20, maxlevel=1},
-		},
-		damage_groups = {fleshy=3},
-	},
-	after_use = function(itemstack, user, node, digparams)      
-	      minetest.chat_send_all("Hello world!")
-         itemstack:add_wear(digparams.wear)
-         return itemstack
-      end,
+minetest.register_tool("helloworld:pick_hello", {
+   description = "Hello World Pickaxe",
+   inventory_image = "helloworld_hellopick.png",
+   tool_capabilities = {
+      full_punch_interval = 1.3,
+      max_drop_level=0,
+      groupcaps={
+         cracky = {times={[2]=2.0, [3]=1.20}, uses=20, maxlevel=1},
+      },
+      damage_groups = {fleshy=3},
+   },
+   after_use = function(itemstack, user, node, digparams)      
+      minetest.chat_send_all("Hello world!")
+      itemstack:add_wear(digparams.wear)
+      return itemstack
+   end,
 })
 ```
-Crafting Hello World Pickaxe. `default:` is needed for Minimal version, whereas `group:` in the regular one allows for all of the type instead of just the individual kind. (Cobblestone is a kind of stone, for instance.)
+
+What's happening here is that we're changing what happens after using the pickaxe, that's why it's called `after_use`. In particular, for something like a pickaxe, that means after breaking a block.
+
+In there, we add in our line for making the words "Hello world!" come out. The things after that are what normally happens in the `after_use` if we didn't change it like we are now.
+
+Now, give it another go. Break some blocks and get "Hello world!" to come up. Fortunately, the comma was a nice extra that was already there from last time. Hopefully you don't have any other issues, but if you do, just compare your code to what's above.
+
+## Craft the Pick
+
+It doesn't really feel part of the game to have to use a sort of cheat code to get it. Let's make it so we can actually craft our pickaxe.
+
+Just add in what's below with the rest of your code.
 
 ```Lua
 minetest.register_craft({
-	output = "tutorial:hellopick",
+	output = "helloworld:pick_hello",
 	recipe = {
-		{'default:stone', 'default:dirt', 'default:stone'},
+		{'default:cobble', 'default:dirt', 'default:cobble'},
 		{'', 'default:stick', ''},
 		{'', 'default:stick', ''},
 	}
 })
 ```
 
+With this, we can craft the Hello World Pickaxe just like a regular Stone Pickaxe, just with a block of dirt at the top of the T shape.
+
+With a few adjustments, we can make this shape a bit more clear.
+
 ```Lua
-function tutorial_crafting()
-   local s = "default:stone"
-   local t = "default:stick"
-   local d = "default:dirt"
+local c = "default:cobble"
+local s = "default:stick"
+local d = "default:dirt"
 
-   minetest.register_craft({
-	   output = "tutorial:hellopick",
-	   recipe = {
-		   {s, d, s},
-		   {'', t, ''},
-		   {'', t, ''},
-	   }
-   })
-end
-
-tutorial_crafting()
+minetest.register_craft({
+   output = "tutorial:hellopick",
+   recipe = {
+      {c, d, c},
+      {'', s, ''},
+      {'', s, ''},
+   }
+})
 ```
+
+Can you see the pickaxe shape in the code a bit better now?
+
+## You've Done It!
+
+If everything is working right, congratulations! You've made your very first mod.
