@@ -21,7 +21,7 @@ With the `mods` folder ready, we can start with our special pickaxe mod. We have
 1. Make a new folder inside of `mods`. Name it `helloworld`.
 2. Inside of the new `helloworld` folder, we make a new file named `init.lua`
 3. Make a new folder next to your file. Name it `textures`.
-4. Save this `helloworld_hellopick.png` image and put it in the `textures` folder.
+4. Save this `helloworld_hellopick.png` image and put it in the `textures` folder:
 ![Hello Word Pickaxe](https://raw.githubusercontent.com/MelCoderDojo/minetest/draft/tutorials/tutorial_tool_hellopick.png)
 
 This is the basic setup we need for this mod we're making. We gave it its own folder, `helloworld`, and then we setup the pieces it will use. `init.lua` is the file we will put our code in. The `textures` folder will hold our image for our pickaxe, that image being `helloworld_hellopick.png`.
